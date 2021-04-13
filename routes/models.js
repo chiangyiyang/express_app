@@ -12,8 +12,8 @@ router.get('/', function (req, res, next) {
   var db = new sqlite3.Database('./model.db');
 
   db.all('SELECT rowid AS id, name, lat, lon, url FROM model', function (err, rows) {
-    res.json(rows);
-    // res.render('all_model', { datas: rows });
+    // res.json(rows);
+    res.render('model_list', { models: rows });
   });
 
   db.close();

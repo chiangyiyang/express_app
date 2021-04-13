@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Model List
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+
+  <% models.forEach(function(model){ %>
+    <li><%= model.name %>, <%= model.lat %>, <%= model.lon %>, <%= model.url %>
+  <%});%>
+
+  <script>
+
+    let models = <%- JSON.stringify(models) %>
+    models.forEach(model => {
+      console.log(model);
+    });
+    
+  </script>
+
+</body>
+
+</html>
